@@ -50,12 +50,12 @@ export function sortStudents(
           + grade, 0) / b.grades.length;
         break;
       default:
-        return 0;
+        throw new Error('error');
     }
 
     if (typeof valueA === 'string' && typeof valueB === 'string') {
       return order === 'asc'
-        ? valueA.localeCompare(valueB) : valueB.localeCompare(valueB);
+        ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
     }
 
     if (typeof valueA === 'number' && typeof valueB === 'number') {
